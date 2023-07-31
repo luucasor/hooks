@@ -20,7 +20,6 @@ const UseEffect = (props) => {
 
     useEffect(function() {
         setFatorial(calcFatorial(number))
-        setEvenOrOdd(number % 2 === 0 ? "Par" : "Impar")
     }, [number])
 
     useEffect(function() {
@@ -30,7 +29,11 @@ const UseEffect = (props) => {
     }, [fatorial])
 
     //Ex #02
-    const [evenOrOdd, setEvenOrOdd] = useState("Impar")
+    const [status, setStatus] = useState("Ímpar")
+    useEffect(function() {
+        setStatus(number % 2 === 0 ? "Par" : "Ímpar")
+    }, [number])
+
     return (
         <div className="UseEffect">
             <PageTitle
@@ -54,7 +57,7 @@ const UseEffect = (props) => {
             <div className="center">
                 <div>
                     <span className="text">Status: </span>
-                    <span className="text red">{evenOrOdd}</span>
+                    <span className="text red">{status}</span>
                 </div>
             </div>
         </div>
