@@ -3,9 +3,7 @@ import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
 
 const merge = function(s1, s2) {
-    let arr1 = s1.split('')
-    let arr2 = s2.split('')
-    return arr1.map((item, index) => item+(arr2[index] ?? ''))
+    return [...s1].map((item, index) => item+(s2[index] || ''))
 }
 
 const UseRef = (props) => {
