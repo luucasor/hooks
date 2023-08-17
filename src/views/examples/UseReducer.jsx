@@ -21,8 +21,6 @@ function reducer(state, action) {
             return { ...state, number2: parseInt(state.number2) }
         case 'numberAddN':
             return { ...state, number2: state.number2 + action.payload }
-
-
         case 'numberAdd2': 
             return { ...state, number: state.number + 2 }
         case 'login':
